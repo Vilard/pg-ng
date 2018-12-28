@@ -1,0 +1,26 @@
+.toggle-button {
+	display: flex;
+	flex-direction: column;
+	margin-left: 20px;
+	border: 1 solid red;
+	background-color:#014c8c;
+	padding: 4px 8px;
+	border-radius: 5px;
+	span{
+		border-radius: 2px;
+		width: 20px;
+		height: 3px;
+		margin: 3px 0;
+		background-color: #FFF;
+	}
+}
+@media screen and (min-width: 1141px){
+	.toggle-button{
+		display: none;
+	}
+}@media screen and (max-width: 1140px){
+	.menu {
+		display: none;
+	}
+
+}

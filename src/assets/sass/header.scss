@@ -1,0 +1,139 @@
+header {
+	position: fixed;
+	width: 100%;
+	border-bottom: 1px solid #504f4f;
+	background-color:rgba(255,255,255,0.9);
+	z-index: 5;
+	display:flex;
+	flex-direction: row;
+	justify-content: space-around;
+	align-items: center;
+	height: 73px;
+	ul {
+		display: flex;
+		justify-content: center;
+		margin: 0 auto;
+		li { 
+		display: inline-block;
+		list-style-type: none;
+		margin: 1.5rem 0; 
+		transition: .3s ease-in-out;
+			a {
+				font-size:.9rem;
+				margin: .6rem; 
+				color:#504f4f;
+				transition: .3s ease-in-out;
+			}
+			a:hover {
+				text-decoration: none;
+			}
+		}
+	}
+}
+
+.topmenu > li {
+  float: left;
+  position: relative;
+}
+
+.topmenu > li > a {
+	font-weight: bold;
+	text-transform: uppercase;
+}
+@media screen and (max-width: 1205px) {
+	.submenu-link:after {
+		display:none;
+	}	
+}
+
+@media screen and (max-width: 1140px) {
+	header {
+		justify-content: space-between;
+		ul {
+			width: 264px;
+			flex-direction: column;
+			position: absolute;
+			background-color:rgba(255,255,255,0.9);
+			top: 80px;
+			left: calc(0px);
+			border-radius: 5px;
+			box-shadow: 1px 1px 2px 1px rgba(0,0,0,0.5);
+			li {
+				// padding: 0;
+				margin: 1rem 0;
+			}
+		}
+	}
+	.menu {
+		transition: 0.5s;
+		display: flex;
+		position: absolute;
+		top: 0px;
+		left: 20px;
+	}	
+}
+@media screen and (max-width: 560px) {
+	header {
+		justify-content: space-between;
+		.menu {
+		left: calc(50% - 132px);
+		}
+	}
+}
+.submenu-link:after {
+  position: relative;
+  content: "▼";
+  color: inherit;
+	right: 10px;
+}
+.submenu {
+  background: #fff;
+	flex-direction: column;
+	position: absolute;
+	left: 0;
+	top: 100%;
+	z-index: 5;
+	width: 220px;
+  opacity: 0;
+	transform: scaleY(0);
+	transform-origin:0 0;
+  transition: .5s ease-in-out;
+  border-radius:5px;
+  box-shadow: 1px 1px 2px 1px rgba(0,0,0,0.5);
+}
+.submenu > li {
+	margin: 0.5rem;
+}
+
+.submenu a {
+	text-align: left;
+	font-size: .8rem;
+	border-bottom: 1px solid rgba(255,255,255,.1);
+}
+// @media screen and (min-width: 1600px) {
+// 	.submenu {width: 350px;}
+// 	.submenu a {
+// 		font-size: 1.4rem;
+// 	}
+// }
+
+.submenu li:last-child a {border-bottom: none;}
+.topmenu > li:hover .submenu {
+  opacity: 1;
+	transform: scaleY(1);
+}
+@media screen and (min-width: 1600px) {
+	.submenu {width: 350px;}
+	.submenu a {
+		font-size: 1.4rem;
+	}
+	header {
+		ul {
+			li{
+				a {
+					font-size: 1.5rem;
+				}	
+			}			
+		} 
+	}
+}

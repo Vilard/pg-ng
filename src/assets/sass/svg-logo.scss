@@ -1,0 +1,11 @@
+ .svg-logo > img {
+ 	padding: 7px 0;
+	height: 61px;
+}
+@media screen and (max-width: 560px){
+	.svg-logo{
+		// display: none;
+		padding-right: 20px;
+
+	}
+}
