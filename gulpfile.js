@@ -27,21 +27,24 @@ var path = {
         js: "build/assets/js/",
         css: "build/assets/css/",
         img: "build/assets/i/",
-        fonts: "build/assets/fonts/"
+        fonts: "build/assets/fonts/",
+        other: "build/"
     },
     src: {
-        html: "src/**/*.{htm,html,ico,txt}",
+        html: "src/**/*.{htm,html}",
         js: "src/assets/js/*.js",
         css: "src/assets/sass/style.scss",
-        img: "src/assets/i/**/*.*",
-        fonts: "src/assets/fonts/**/*.*"
+        img: "src/assets/i/**/*.{jpg,png}",
+        fonts: "src/assets/fonts/**/*.*",
+        other: "src/*.{ico,txt}"
     },
     watch: {
-        html: "src/**/*.{htm,html,ico,txt}",
+        html: "src/**/*.{htm,html}",
         js: "src/assets/js/**/*.js",
         css: "src/assets/sass/**/*.scss",
-        img: "src/assets/i/**/*.*",
-        fonts: "src/assets/fonts/**/*.*"
+        img: "src/**/*.{jpg,png}",
+        fonts: "src/assets/fonts/**/*.*",
+        other: "src/*.{ico,txt}"
     },
     clean: "./build"
 };
@@ -130,6 +133,11 @@ gulp.task("image:build", function () {
         .pipe(gulp.dest(path.build.img));
 });
 
+gulp.task("other:build", function () {
+    gulp.src(path.src.other)
+        .pipe(gulp.dest(path.build.other));
+});
+
 
 gulp.task("clean", function (cb) {
     rimraf(path.clean, cb);
@@ -143,9 +151,11 @@ gulp.task('build', function (cb) {
         "css:build",
         "js:build",
         "fonts:build",
-        "image:build"
+        "image:build",
+        "other:build"
     , cb);
 });
+
 
 
 gulp.task("watch", function() {
