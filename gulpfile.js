@@ -36,7 +36,7 @@ var path = {
         css: "src/assets/sass/style.scss",
         img: "src/assets/i/**/*.{jpg,png}",
         fonts: "src/assets/fonts/**/*.*",
-        other: "src/*.{ico,txt}"
+        other: "src/*.{ico,txt,xml}"
     },
     watch: {
         html: "src/**/*.{htm,html}",
@@ -44,7 +44,7 @@ var path = {
         css: "src/assets/sass/**/*.scss",
         img: "src/**/*.{jpg,png}",
         fonts: "src/assets/fonts/**/*.*",
-        other: "src/*.{ico,txt}"
+        other: "src/*.{ico,txt,xml}"
     },
     clean: "./build"
 };
